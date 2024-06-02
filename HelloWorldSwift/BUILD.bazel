@@ -18,10 +18,13 @@ licenses(["notice"])
 
 swift_library(
     name = "Sources",
-    srcs = ["Sources/AppDelegate.swift"],
-    data = [
-        "Resources/Main.storyboard",
+    srcs = [
+        "Sources/AppDelegate.swift",
+        "Sources/SwiftUIView.swift",
     ],
+    # data = [
+    #     "Resources/Main.storyboard",
+    # ],
 )
 
 apple_bundle_version(
@@ -34,7 +37,7 @@ macos_application(
     app_icons = ["//resources:MacAppIcon.xcassets"],
     bundle_id = "com.example.hello-world-swift",
     infoplists = [":Info.plist"],
-    minimum_os_version = "10.13",
+    minimum_os_version = "11.0",
     version = ":HelloWorldSwiftVersion",
     deps = [":Sources"],
 )

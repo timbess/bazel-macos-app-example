@@ -1,6 +1,14 @@
+common --symlink_prefix=.bazel/
+common --enable_platform_specific_config
 
-build --enable_platform_specific_config
 build:macos --apple_crosstool_top=@local_config_apple_cc//:toolchain
 build:macos --crosstool_top=@local_config_apple_cc//:toolchain
 build:macos --host_crosstool_top=@local_config_apple_cc//:toolchain
+build:macos --host_macos_minimum_os=11.0
+build:macos --macos_minimum_os=11.0
 
+startup --host_jvm_args=-DBAZEL_TRACK_SOURCE_DIRECTORIES=1
+build --experimental_remote_merkle_tree_cache
+build --experimental_remote_merkle_tree_cache_size=10000
+build:unix --incompatible_strict_action_env
+# ^ https://blog.aspect.build/bazelrc-flags
