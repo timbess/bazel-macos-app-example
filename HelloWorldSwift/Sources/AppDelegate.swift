@@ -12,14 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//import Cocoa
-
-//@NSApplicationMain
-//class AppDelegate: NSObject, NSApplicationDelegate {
-//}
-
-
-import Foundation
 import SwiftUI
 
 @main
