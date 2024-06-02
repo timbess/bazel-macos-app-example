@@ -12,6 +12,8 @@ load(
     "swift_library",
 )
 
+package(default_visibility = ["//visibility:public"])
+
 licenses(["notice"])
 
 swift_library(
